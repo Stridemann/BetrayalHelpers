@@ -15,7 +15,7 @@ namespace BetrayalHelpers.Labels
 				return;
 
 			var champNameSize = Graphics.DrawText(
-				$"{info.State.Target.Name}: {(info.State.Job.Name[0] == 'N' ? '-' : info.State.Job.Name[0])}",
+				$"{info.State.Target.Name}: {(info.State.Job.Name[0] == 'N' ? '-' : info.State.Job.Name[0])} {new string('*', info.State.Rank.RankInt)}",
 				(int) Math.Round(FontSize * 1.5f), 
 				champNamePos, 
 				Color.White, FontDrawFlags.Center | FontDrawFlags.Top);
