@@ -17,11 +17,11 @@ namespace BetrayalHelpers.Modules
 		//Execute- (increased rank by 1)(Allocation status does not matter here; only relation status.)
 
 		//If 3 members: 
-		//Can execute
+		//Can execute (increase rank, move to fraction (by event type) if no rank)
 
 		//If 2 members:
 		//	if hostile or neutral:
-		//		Execute
+		//		Execute (increase rank, move to fraction (by event type) if no rank)
 		//	if frendly:
 		//		Betray (Swap Leader, Remove NPC, Steal Rank, Steal Intelligence, Destroy all items of Rival Division, Down Rank Rivals/ Uprank Division)
 		//			

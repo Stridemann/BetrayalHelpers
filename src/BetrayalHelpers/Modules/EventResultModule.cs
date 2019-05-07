@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PoeHUD.Framework.Helpers;
 using PoeHUD.Hud.Preload;
+using PoeHUD.Plugins;
 using PoeHUD.Poe.RemoteMemoryObjects;
 using SharpDX;
 
@@ -30,10 +31,12 @@ namespace BetrayalHelpers.Modules
 				drawPos.Y += fontSize;
 
 
-				var textSize = new Size2();
+				var textSize = new Size2(0, fontSize);
 
-				if (!string.IsNullOrEmpty(eventResult.LostStuff))
-					textSize = Utils.DrawTextWithBackground(eventResult.LostStuff, fontSize, drawPos, Color.Red);
+                if (!string.IsNullOrEmpty(eventResult.LostStuff))
+                {
+                    textSize = Utils.DrawTextWithBackground(eventResult.LostStuff, fontSize, drawPos, Color.Red);
+                }
 
 				if (!string.IsNullOrEmpty(eventResult.NewStuff))
 					Utils.DrawTextWithBackground("=>" + eventResult.NewStuff, fontSize, drawPos.Translate(textSize.Width, textSize.Height - fontSize), Color.LightGreen);
@@ -189,7 +192,9 @@ namespace BetrayalHelpers.Modules
 			string newStuff = null;
 			if (fraction1Guy.Rank.RankInt == 0)
 			{
+                LogError("BetrayalHelpers plugin: ", 5);
 				var job = GetCanGoToJob();
+                            
 				if (job == null)
 				{
 					LogError("Can't find current mission type! (not found in preloads that showed on screen)", 5);

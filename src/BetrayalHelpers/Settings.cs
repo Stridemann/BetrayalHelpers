@@ -25,7 +25,7 @@ namespace BetrayalHelpers
 		//public RangeNode<int> PosY { get; set; } = new RangeNode<int>(120, 0, 2000);
 
 		[Menu("Font Size")]
-		public RangeNode<int> FontSize { get; set; } = new RangeNode<int>(15, 1, 40);
+		public RangeNode<int> FontSize { get; set; } = new RangeNode<int>(7, 1, 40);
 
 		[Menu("Reward color")]
 		public ColorNode RewardColor { get; set; } = new ColorNode(Color.LightGreen);
