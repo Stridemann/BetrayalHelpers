@@ -68,7 +68,7 @@ namespace BetrayalHelpers
 
 			var restrictRect = new RectangleF();
 			var eventElement = syndicatePanel.EventElement;
-			if (eventElement.IsVisible)
+			if (eventElement != null && eventElement.IsVisible)
 			{
 				restrictRect = eventElement.GetChildAtIndex(4).GetClientRect();
 				var second = eventElement.GetChildAtIndex(5).GetClientRect();
